@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios Integrales - Next Level</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        dark: '#0f172a',
+                        card: '#1e293b',
+                        primary: '#3b82f6',
+                        accent: '#8b5cf6', 
+                    },
+                    backgroundImage: {
+                        'hero-pattern': "linear-gradient(to right bottom, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.95)), url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=1952&q=80')",
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #0f172a;
+            color: #e2e8f0;
+        }
+        
+        .glass-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        /* En móviles, evitamos efectos hover que puedan quedarse "pegados" al tocar */
+        @media (hover: hover) {
+            .glass-card:hover {
+                transform: translateY(-8px);
+                border-color: rgba(59, 130, 246, 0.5);
+                box-shadow: 0 20px 40px -5px rgba(59, 130, 246, 0.15);
+            }
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .icon-glow {
+            filter: drop-shadow(0 0 8px rgba(59, 130, 246, 0.5));
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-in {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Navbar Flotante -->
+    <nav class="fixed w-full z-50 top-0 left-0 border-b border-white/10 bg-dark/90 backdrop-blur-md">
+        <!-- Ajuste de padding horizontal (px-4 en móvil, px-6 en escritorio) -->
+        <div class="container mx-auto px-4 md:px-6 py-3 md:py-4 flex justify-between items-center">
+            <!-- Logo Adaptado (tamaño responsivo h-10 en móvil, h-12 en escritorio) -->
+            <div class="flex items-center space-x-2">
+                <img src="https://image2url.com/r2/default/images/1769115319414-de1f0d52-f7e6-4397-9de2-41b8e9e10812.png" alt="Logo" class="h-10 md:h-12 w-auto object-contain drop-shadow-lg">
+            </div>
+            <!-- Botón Cotizar: Visible en móvil (flex), texto ajustado -->
+            <a href="https://wa.me/573021192800" target="_blank" class="flex items-center justify-center px-4 py-2 md:px-6 border border-transparent text-xs md:text-sm font-medium rounded-full text-white bg-blue-600 hover:bg-blue-700 transition shadow-lg shadow-blue-500/30">
+                <i class="fab fa-whatsapp mr-2 text-base"></i> <span class="hidden sm:inline">Cotizar Proyecto</span><span class="sm:hidden">Cotizar</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section Moderno -->
+    <header class="relative pt-28 pb-16 lg:pt-48 lg:pb-32 bg-hero-pattern bg-cover bg-center overflow-hidden">
+        <div class="absolute top-0 left-1/4 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl -translate-y-1/2"></div>
+        <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl translate-y-1/2"></div>
+
+        <div class="container mx-auto px-4 md:px-6 text-center relative z-10 animate-in">
+            <div class="inline-block px-4 py-1.5 mb-6 rounded-full border border-blue-500/30 bg-blue-500/10 text-blue-300 text-xs md:text-sm font-semibold tracking-wide uppercase">
+                Soluciones Digitales & Físicas
+            </div>
+            <!-- Tipografía responsiva: text-4xl en móvil, sube hasta text-7xl en escritorio -->
+            <h1 class="text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-tight mb-6 text-white leading-tight">
+                Elevamos tu marca <br>
+                <span class="gradient-text">al siguiente nivel</span>
+            </h1>
+            <p class="text-lg md:text-xl text-slate-300 max-w-2xl mx-auto mb-10 font-light leading-relaxed px-2">
+                Fusionamos diseño de alto impacto, tecnología NFC y sistemas de gestión en una sola propuesta integral.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4 px-4">
+                <a href="#networking" class="w-full sm:w-auto px-8 py-4 bg-white text-dark font-bold rounded-lg hover:bg-gray-100 transition shadow-xl text-center">
+                    Ver Soluciones
+                </a>
+                <a href="#contacto" class="w-full sm:w-auto px-8 py-4 border border-white/20 bg-white/5 backdrop-blur-sm text-white font-semibold rounded-lg hover:bg-white/10 transition text-center">
+                    Contactar Ahora
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- SECCIÓN PRINCIPAL: NETWORKING & IDENTIDAD -->
+    <section id="networking" class="py-16 md:py-20 bg-dark relative">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12 border-b border-gray-800 pb-6">
+                <div class="w-full">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-2">Networking e Identidad</h2>
+                    <p class="text-slate-400">Herramientas modernas para conectar con tus clientes.</p>
+                </div>
+                <div class="mt-4 md:mt-0 w-full md:w-auto text-left md:text-right">
+                    <span class="text-blue-400 font-semibold text-sm">2 Servicios Disponibles</span>
+                </div>
+            </div>
+
+            <!-- Grid de Tarjetas: Ajustado a 2 columnas para centrar mejor ahora que eliminamos una -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+                
+                <!-- Card 1: NFC -->
+                <div class="glass-card p-6 md:p-8 rounded-2xl group relative overflow-hidden flex flex-col items-start">
+                    <div class="absolute top-0 right-0 bg-gradient-to-bl from-blue-600 to-transparent w-16 h-16 opacity-20 rounded-bl-3xl"></div>
+                    <div class="w-14 h-14 bg-blue-500/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-wifi text-2xl text-blue-400 icon-glow"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Tarjetas NFC</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-6 flex-grow">
+                        La evolución del contacto. Acerca la tarjeta al móvil y comparte tu perfil al instante. PVC rígido, resistente y 100% reutilizable.
+                    </p>
+                    <a href="https://wa.me/573021192800?text=Hola,%20quiero%20cotizar%20las%20tarjetas%20NFC" target="_blank" class="w-full text-center mt-auto px-4 py-2 bg-blue-600/20 hover:bg-blue-600 text-blue-300 hover:text-white border border-blue-500/30 rounded-lg transition-all duration-300 text-sm font-semibold">
+                        Conocer más <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Card 2: vCard -->
+                <div class="glass-card p-6 md:p-8 rounded-2xl group flex flex-col items-start">
+                    <div class="w-14 h-14 bg-purple-500/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-qrcode text-2xl text-purple-400 icon-glow"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">vCard Digital</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-6 flex-grow">
+                        Tu tarjeta de presentación en la nube. Botones interactivos para WhatsApp, Maps y Redes. Incluye botón de "Guardar Contacto".
+                    </p>
+                    <a href="https://wa.me/573021192800?text=Hola,%20quiero%20cotizar%20la%20vCard%20Digital" target="_blank" class="w-full text-center mt-auto px-4 py-2 bg-purple-600/20 hover:bg-purple-600 text-purple-300 hover:text-white border border-purple-500/30 rounded-lg transition-all duration-300 text-sm font-semibold">
+                        Conocer más <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN: DISEÑO Y GESTIÓN -->
+    <section class="py-16 md:py-20 bg-dark/50 border-t border-gray-800">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12">
+                <div class="w-full">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-2">Diseño y Gestión</h2>
+                    <p class="text-slate-400">Soluciones visuales y administrativas optimizadas.</p>
+                </div>
+            </div>
+
+            <!-- Grid Unificado -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+
+                <!-- Card 4: Catálogos -->
+                <div class="glass-card p-6 md:p-8 rounded-2xl group flex flex-col items-start">
+                    <div class="w-14 h-14 bg-pink-500/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-book-open text-2xl text-pink-400 icon-glow"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Catálogos Interactivos</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-6 flex-grow">
+                        Diseño editorial para vender más. PDF interactivo con links directos a WhatsApp o listos para imprenta de alta resolución.
+                    </p>
+                    <a href="https://wa.me/573021192800?text=Hola,%20quiero%20cotizar%20los%20Catálogos%20Interactivos" target="_blank" class="w-full text-center mt-auto px-4 py-2 bg-pink-600/20 hover:bg-pink-600 text-pink-300 hover:text-white border border-pink-500/30 rounded-lg transition-all duration-300 text-sm font-semibold">
+                        Conocer más <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Card 5: Edición de Imagen -->
+                <div class="glass-card p-6 md:p-8 rounded-2xl group flex flex-col items-start">
+                    <div class="w-14 h-14 bg-orange-500/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-magic text-2xl text-orange-400 icon-glow"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Edición Profesional</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-6 flex-grow">
+                        Perfeccionamos tu imagen. Silueteado de productos, corrección de color, restauración y fotomontajes publicitarios.
+                    </p>
+                    <a href="https://wa.me/573021192800?text=Hola,%20quiero%20cotizar%20el%20servicio%20de%20Edición%20Profesional" target="_blank" class="w-full text-center mt-auto px-4 py-2 bg-orange-600/20 hover:bg-orange-600 text-orange-300 hover:text-white border border-orange-500/30 rounded-lg transition-all duration-300 text-sm font-semibold">
+                        Conocer más <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Card 6: Facturación -->
+                <div class="glass-card p-6 md:p-8 rounded-2xl group relative flex flex-col items-start">
+                    <div class="absolute top-4 right-4 text-xs font-bold px-2 py-1 bg-green-500/20 text-green-400 rounded">Software</div>
+                    <div class="w-14 h-14 bg-cyan-500/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-laptop-code text-2xl text-cyan-400 icon-glow"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Sistema de Facturación</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-6 flex-grow">
+                        Control total de tu negocio. Inventarios, reportes de venta y facturación rápida en una interfaz intuitiva y fácil de usar.
+                    </p>
+                    <a href="https://wa.me/573021192800?text=Hola,%20quiero%20cotizar%20el%20Sistema%20de%20Facturación" target="_blank" class="w-full text-center mt-auto px-4 py-2 bg-cyan-600/20 hover:bg-cyan-600 text-cyan-300 hover:text-white border border-cyan-500/30 rounded-lg transition-all duration-300 text-sm font-semibold">
+                        Conocer más <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section id="contacto" class="py-20 md:py-24 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-r from-blue-900 to-purple-900 opacity-50"></div>
+        <div class="container mx-auto px-4 md:px-6 relative z-10 text-center">
+            <h2 class="text-3xl md:text-5xl font-bold text-white mb-6 md:mb-8">¿Listo para innovar?</h2>
+            <p class="text-lg md:text-xl text-blue-100 mb-8 md:mb-10 max-w-2xl mx-auto px-2">
+                Transforma la manera en que presentas y gestionas tu negocio hoy mismo.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4 md:gap-6 px-4">
+                <!-- Botón WhatsApp Actualizado y Responsivo -->
+                <a href="https://wa.me/573021192800" target="_blank" class="w-full sm:w-auto group flex items-center justify-center gap-3 bg-green-500 hover:bg-green-600 text-white px-6 md:px-8 py-3 md:py-4 rounded-full text-base md:text-lg font-bold transition-all shadow-lg shadow-green-500/30 transform hover:-translate-y-1">
+                    <i class="fab fa-whatsapp text-xl md:text-2xl group-hover:rotate-12 transition-transform"></i>
+                    <span>Contactar por WhatsApp</span>
+                </a>
+            </div>
+            
+            <div class="mt-10 md:mt-12 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-center gap-4 md:gap-8 text-slate-400 text-sm">
+                <div class="flex items-center justify-center gap-2">
+                    <i class="fas fa-clock text-blue-400"></i> Lunes a Viernes: 9:00 AM - 6:00 PM
+                </div>
+                <div class="flex items-center justify-center gap-2">
+                    <i class="fas fa-map-marker-alt text-blue-400"></i> Servicio Digital y Envíos Nacionales
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark border-t border-gray-800 py-8 text-center px-4">
+        <p class="text-slate-500 text-sm">&copy; 2024 Servicios Integrales. Diseñado para el éxito.</p>
+    </footer>
+
+</body>
+</html>
